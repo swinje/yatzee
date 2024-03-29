@@ -163,6 +163,24 @@
               <td colspan="8"></td>
             </tr>
             <tr>
+              <td>Ett par</td>
+              <td><input type="text" id="ep1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="ep2" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="ep3" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="ep4" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="ep5" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="ep6" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+            </tr>
+            <tr>
+              <td>To par</td>
+              <td><input type="text" id="tp1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="tp2" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="tp3" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="tp4" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="tp5" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+              <td><input type="text" id="tp6" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
+            </tr>
+            <tr>
               <td>Tre like</td>
               <td><input type="text" id="tl1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
               <td><input type="text" id="tl2" oninput="this.value=this.value.replace(/[^0-9]/g,'');"></td>
@@ -282,7 +300,8 @@ function clearAll() {
       }
       document.getElementById("bonussum"+i).value = (total==0) ? null: total;
         
-
+      var ep = parseInt(document.getElementById("ep"+i).value) || 0;
+      var tp = parseInt(document.getElementById("tp"+i).value) || 0;
       var tl = parseInt(document.getElementById("tl"+i).value) || 0;
       var fl = parseInt(document.getElementById("fl"+i).value) || 0;
       var h = parseInt(document.getElementById("h"+i).value) || 0;
@@ -290,7 +309,7 @@ function clearAll() {
       var ss = parseInt(document.getElementById("ss"+i).value) || 0;
       var y = parseInt(document.getElementById("y"+i).value) || 0;
       var sj = parseInt(document.getElementById("sj"+i).value) || 0;
-      total += tl+fl+h+ls+ss+y+sj;
+      total += ep+tp+tl+fl+h+ls+ss+y+sj;
 
       document.getElementById("total"+i).value = (total==0) ? null: total;
     }
